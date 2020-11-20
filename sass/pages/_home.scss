@@ -1,0 +1,333 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+
+  &--news{
+    width: unset;
+  }
+}
+
+.heading{
+  padding: 30px 0;
+  font-size: 2rem;
+
+  &__text{
+    padding: 0 0 40px;
+  }
+}
+
+.hero{
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../img/hero_nocco_2-1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 500;
+  }
+
+  &__heading{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+
+  &__social{
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+  }
+
+  &__social-text{
+    color: #fff;
+    transform: rotate(-90deg);
+    margin-bottom: 30px;
+  }
+
+  &__social-line{
+    border-left: 2px solid #fff;
+    height: 100px;
+    margin: 20px 0;
+  }
+
+  &__social-link{
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  &__find-us{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+  }
+}
+
+.about{
+  background-color: pink;
+
+  &__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    text-align: center;
+
+    &--1{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item-img{
+    height: 300px;
+  }
+}
+
+
+.product{
+  background-image: url(../img/product-section.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 20px;
+  height: 100%;
+
+
+  &__items{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  &__item{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  &__img{
+    height: 60vh;
+  }
+
+  &__btn-box{
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.news{
+
+  &__items{
+    margin-top: 400px;
+  }
+
+  &__item{
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  &__blog-post{
+    position: relative;
+  }
+
+  &__blog-link{
+    display: block;
+  }
+
+  &__blog-overlay:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(13, 46, 90, 0.3);
+  }
+
+  &__blog-img{
+    width: 100%;
+  }
+
+  &__blog-title{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    font-size: 1.3rem;
+    z-index: 1;
+
+    &:after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid #f7e946;
+      display: block;
+      margin-top: 80px;
+    }
+  }
+}
+
+.about{
+  background-image: url(../img/about-us.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 20px;
+  height: 100%;
+  position: relative;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(13, 28, 49, 0.48);
+  }
+
+  &__items{
+    color: #fff;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.instagram{
+  text-align: center;
+  background: #000;
+  color: #fff;
+
+  &__gallery{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.map{
+  background-image: url(../img/map.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 70px 0;
+  height: 100%;
+  position: relative;
+  color: #fff;
+  text-align: center;
+
+  &__locations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.newsletter{
+  padding: 40px 0;
+  background: chocolate;
+  text-align: center;
+
+  &__signup{
+    padding: 10px 0;
+  }
+
+  &__email{
+    border: none;
+    padding: 20px 30px;
+    width: 50%;
+  }
+}
+
+.footer{
+  padding: 70px 0 10px;
+  background: #000;
+  color: #fff;
+  position: relative;
+
+  &__item{
+    padding: 10px 0;
+  }
+
+  &__logo{
+    width: 50%;
+  }
+
+  &__social-link{
+    margin-right: 10px;
+  }
+
+  &__social-icon{
+    font-size: 1.2rem;
+  }
+
+  &__bottom{
+    margin-top: 80px;
+  }
+
+  &__bottom{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__payments{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__payments-icon{
+    width: 40px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+  .about__item-img {
+    height: unset;
+  }
+
+  .footer__items{
+    flex-direction: row;
+  }
+}

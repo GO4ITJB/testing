@@ -1,0 +1,166 @@
+.nav {
+  width: 100%;
+  padding: 0 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  z-index: 1000;
+
+  &__logo-link {
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__lang{
+    margin-right: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__btn {
+    z-index: 2000;
+    cursor: pointer;
+  }
+
+  &__background {
+    height: 1px;
+    width: 10px;
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    background-image: radial-gradient(#375f6d, #203a43);
+    // background-image: radial-gradient(#1b2f36, #203a43);
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.86, -0.55, 0.265, 1.55); // Menu background speed
+  }
+
+  &__menu {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0; //Make it dissapear to the top, also change checked value
+    right: -100%; //Make it dissapear to the right, also change checked value
+    //left: -100%;     //Make it dissapear to the left, also change checked value
+    //bottom: -100%;   //Make it dissapear to the bottom, also change checked value
+
+    z-index: 1500;
+    transition: all 0.5s cubic-bezier(0.86, -0.55, 0.265, 1.55); // Menu speed
+  }
+
+  &__list {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    margin-top: -40px;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: #fff;
+      padding: 20px 40px;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-decoration: none;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        #fff 50%
+      );
+      background-size: 250%;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: #000;
+      transform: translateX(10px);
+    }
+  }
+
+  // <----NOW U SEE IT..(magic)..NOW U DON'T---->
+  // ~that is the sibling selector
+  &__toggler:checked ~ &__background {
+    transform: scale(5000);
+    opacity: 1;
+  }
+
+  &__toggler:checked ~ &__menu {
+    right: 0;
+  }
+
+  // <---ICON--->
+
+  &__ham-icon {
+    position: relative;
+    margin-top: 20px;
+
+    &,
+    &:before,
+    &:after {
+      width: 25px;
+      height: 1px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &:before {
+      top: -6px;
+    } // Always double up on the space
+    &:after {
+      top: 6px;
+    }
+  }
+
+  // Line animation
+  &__btn:hover &__ham-icon:before{
+    top: -8px;
+  }
+  
+  &__btn:hover &__ham-icon:after{
+    top: 8px;
+  }
+
+  &__toggler:checked + &__btn &__ham-icon {
+    background-color: transparent;
+  }
+
+  &__toggler:checked + &__btn {
+    position: fixed;
+  }
+
+  &__toggler:checked + &__btn &__ham-icon:before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__toggler:checked + &__btn &__ham-icon:after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
